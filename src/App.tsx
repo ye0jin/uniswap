@@ -17,8 +17,9 @@ function App() {
     const isButton = inputValue1 && inputValue2; // value가 둘 다 있을 경우
 
     return (
-        <div className="container">
+    <div className="container">
         <div className="mainbox">
+
             <header className="swapheader">
                 <h3>스왑</h3>
                 <button className="settingbutton" onClick={() => alert("준비 중입니다.")}>

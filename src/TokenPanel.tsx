@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import TokenModal from "./TokenModal";
 
 interface TokenPanelProps {
     isOpen: boolean;
@@ -6,6 +7,7 @@ interface TokenPanelProps {
 }
 
 const TokenPanel: React.FC<TokenPanelProps> = ({ isOpen, onClose }) => {
+
     if (!isOpen) return null;
 
     return (
@@ -13,6 +15,14 @@ const TokenPanel: React.FC<TokenPanelProps> = ({ isOpen, onClose }) => {
             <div className="tokenpanelHeader">
                 <h4>토큰 선택</h4>
                 <button className="tokenpanelClosebtn" onClick={onClose}>❌</button>
+            </div>
+
+            <TokenModal/>
+
+            <div>
+                <button className="tokenpanelFooter" onClick={()=>alert("준비 중입니다.")}>
+                    토큰 목록 관리
+                </button>
             </div>
         </div>
     );

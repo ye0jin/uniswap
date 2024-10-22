@@ -5,6 +5,22 @@ body {
   background-color: #ffffff;
 }
 
+button{
+  font-family: 'Noto Sans Korean', sans-serif;
+}
+input{
+  font-family: 'Noto Sans Korean', sans-serif;
+}
+
+ul {
+  font-family: 'Noto Sans Korean', sans-serif;
+
+  padding: 0;
+  margin: 0;
+}
+
+/* ========================== */
+
 .mainbox {
   border: transparent;
   color: #445EF2;
@@ -23,50 +39,50 @@ body {
   padding: 0px 20px 20px 20px;
   position: relative;
 }
-
-button{
-  font-family: 'Noto Sans Korean', sans-serif;
-}
-input{
-  font-family: 'Noto Sans Korean', sans-serif;
-}
-
 .container {
   display: flex;
   justify-content: center; 
   align-items: center; 
   flex-direction: column; 
+
   font-family: "dohyeon", serif;
 }
 
 .maininput {
-  border: transparent;
+  border: none;
+  background: none;
+  color: #040922;
+
   width: 100%;
   height: 40px; 
-  padding: 10px; 
-  background: transparent;
-  border-radius: 8px; 
-  margin-bottom: 10px;
-  font-size: 20px; 
 
-  color: #040922;
+  padding: 10px; 
+  margin-bottom: 10px;
+
+  border-radius: 8px; 
+
+  font-size: 20px; 
 }
 
 .sellbutton {
-  border: transparent;
+  border: none;
   background: #8c90a2;
   color: #e3e3ef;
 
   width: 100%;
   height: 50px;
-  border-radius: 13px;
+
   margin-top: 10px;
+
+  border-radius: 13px;
+  
   font-size: 15px; 
 }
 
 .sellbutton.enabled {
   background: #445EF2;
   color: #FFF;
+
   cursor: pointer;
 }
 
@@ -80,36 +96,43 @@ input{
 }
 
 .settingbutton {
+  border: none; 
+  background: none; 
+
   width: 50px;
   height: 50px;
-  
-  background: none; 
-  border: none; 
+
   font-size: 24px; 
+  
   cursor: pointer; 
-    top: 10px;
+
+  top: 10px;
   right: 10px; 
 }
 
 .inputholder{
+  background-color: #cdced8; 
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-  
-  background-color: #cdced8; 
 
+  margin-bottom: 20px;
   padding: 10px;
+
   border-radius: 15px; 
 }
 
 .tokenbutton{
-  margin-left: 10px;
-  background-color: #9397a7; 
   border: none; 
-  padding: 10px 15px; /* 내부  */
-  border-radius: 12px; 
+  background-color: #9397a7; 
   color: white;
+
+  margin-left: 10px; /*이건 외부에서*/
+  padding: 10px 15px; /*내부*/
+
+  border-radius: 12px; 
+
   font-size: 16px;
   cursor: pointer;
 }
@@ -117,37 +140,77 @@ input{
 .tokenpanel {
   font-family: 'Noto Sans Korean', sans-serif;
 
-  border-radius: 12px; 
-
-  border: none;
-  padding: 10px 10px;
-
   border: 2px solid #cdcdd5;
   background-color: #EBEBF2;
+
+  border-radius: 12px; 
+
+  padding: 10px 10px;
 
   width: 300px; 
   height: 280px; 
   
   position: absolute;
-  flex-direction: column; /*세로? 로 정렬해주는 거*/
+  flex-direction: column; /*세로?로 정렬해주는 거*/
   justify-content: center; /*중앙*/
 }
 
 .tokenpanelHeader {
-
   font-family: 'Noto Sans Korean', sans-serif;
+
   color: #445EF2;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
   padding: 0px 10px 10px 10px;
 }
 
 .tokenpanelClosebtn {
-  background: none;
   border: none; 
+  background: none;
   color: #000;
+
   font-size: 15px; 
+  
   cursor: pointer; 
+}
+
+.tokenpanelFooter{
+  font-family: 'Noto Sans Korean', sans-serif;
+
+  border: none;
+  background: none;
+  color: #445EF2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  cursor: pointer; 
+}
+
+
+.tokenmodal{
+  background-color: #9397a7;
+
+  padding: 10px;
+  margin: 10px;
+
+  list-style-type: none; /*동그라미 없애기*/
+
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.tokenmodal:hover{
+  background-color: #686d82;
 }
