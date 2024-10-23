@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Noto Sans Korean', sans-serif;
-  background-color: #ffffff;
+  background-color: #d6d6df;
 }
 
 button{
@@ -21,9 +21,20 @@ ul {
 
 li{
   font-family: 'Noto Sans Korean', sans-serif;
+  list-style-type: none; /*동그라미 없애기*/
 }
 
 /* ========================== */
+
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  height: 100vh; /* 전체 화면 높이를 차지하도록 추가 */
+  
+  font-family: 'Noto Sans Korean', sans-serif;
+}
 
 .mainbox {
   border: transparent;
@@ -37,19 +48,11 @@ li{
   border-radius: 13px;
   margin: 20px;
 
-  flex-direction: column; /*세로? 로 정렬해주는 거*/
-  justify-content: center; /*중앙*/
+  flex-direction: column; /* 세로 정렬 */
+  justify-content: center; /* 중앙 정렬 */
   
   padding: 0px 20px 20px 20px;
   position: relative;
-}
-.container {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-
-  font-family: 'Noto Sans Korean', sans-serif;
 }
 
 .maininput {
@@ -150,14 +153,14 @@ li{
   font-family: 'Noto Sans Korean', sans-serif;
 
   border: none;
-  background-color: #e0e0e9;
+  background-color: #EBEBF2;
 
   border-radius: 15px; 
 
   padding: 10px 10px;
 
   width: 300px; 
-  height: 370px; 
+  height: 480px; 
   
   position: absolute;
   flex-direction: column; /*세로?로 정렬해주는 거*/
@@ -174,29 +177,6 @@ li{
   justify-content: space-between;
   
   padding: 0px 10px 10px 10px;
-}
-
-.tokenmodalContainer{
-  width:300px;
-  height:200px;
-
-  margin-top: 10px;
-
-  overflow-y: auto; /*스크롤*/
-  
-}
-
-.tokenmodalContainer::-webkit-scrollbar {
-  width: 8px;
-}
-
-.tokenmodalContainer::-webkit-scrollbar-thumb {
-  background: #8c90a2;
-  border-radius: 20px;
-}
-
-.tokenmodalContainer::-webkit-scrollbar-track {
-  background: none;
 }
 
 .tokenmodalSearchInput{
@@ -219,6 +199,43 @@ li{
   font-size: 15px; 
   
   cursor: pointer; 
+}
+
+.recentTokenHolder{
+  background: none;
+
+  height: 100px;
+  width: 270px;
+  
+  padding: 0 10px;
+
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.recentTokenHolder.none{
+  height: 0px;
+  width: 0px;
+}
+
+.recentToken{
+  /*border: 2px solid #000;*/
+  background: #e1e1ea;
+
+  height: 40px;
+  width: 60px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px; 
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+.recentToken:hover{
+  background: #d3d3dc;
 }
 
 .tokenpanelFooter{
@@ -248,10 +265,11 @@ li{
 .tokenmodal{
   background-color: #c2c2cc;
 
+  width: 242px;
+  height: 30px;
+
   padding: 10px;
   margin: 10px;
-
-  list-style-type: none; /*동그라미 없애기*/
 
   text-align: center;
 
@@ -267,3 +285,35 @@ li{
 .tokenmodal:hover{
   background-color: #9397a7;
 }
+
+.tokenmodalContainer{
+  width:300px;
+  height:200px;
+
+  margin-top: 10px;
+
+  overflow-y: auto; /*스크롤*/ 
+}
+.tokenmodalContainer.none{
+  width:300px;
+  height:310px;
+
+  margin-top: 10px;
+
+  overflow-y: auto; /*스크롤*/ 
+}
+
+/*scroll*/
+.tokenmodalContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tokenmodalContainer::-webkit-scrollbar-thumb {
+  background: #acb0c3;
+  border-radius: 20px;
+}
+
+.tokenmodalContainer::-webkit-scrollbar-track {
+  background: none;
+}
+/**/

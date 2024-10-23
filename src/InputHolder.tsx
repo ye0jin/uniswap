@@ -17,13 +17,14 @@ const InputHolder: React.FC<InputHolderProps> = ({
     onOpenPanel,
     selectTokenName,
 }) => {
-    const isSelected = selectTokenName != 'Select Token';
+    //const isSelected = selectTokenName != 'Select Token';
 
     return (
         <div className="inputholder">
             <MainInput value={inputValue} onChange={(v: string) => onChange(idx, v)} />
+            
             <button 
-                className={`tokenbutton ${isSelected ? 'selected' : ''}`}
+                className={`tokenbutton selected`/*`tokenbutton ${isSelected ? 'selected' : ''}`*/}
                 onClick={onOpenPanel}> {/*click시 opOpenPanel 함수 호출 (App -> true) 로 변경돼서 패널이 열림*/}
                 {selectTokenName}
             </button>
