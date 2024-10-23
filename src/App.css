@@ -43,7 +43,7 @@ li{
 
   display: flex;
   width: 360px;
-  height: 400px;
+  height: 430px;
 
   border-radius: 13px;
   margin: 20px;
@@ -61,14 +61,27 @@ li{
   color: #040922;
 
   width: 100%;
-  height: 40px; 
+  height: 50px; 
 
   padding: 10px; 
   margin-bottom: 10px;
 
   border-radius: 8px; 
 
+  position: relative;
+  bottom:5px;
+
   font-size: 20px; 
+}
+.maininput:focus {
+  outline: none;
+}
+
+.transformValue{
+  color:#c2c2cc;
+
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .sellbutton {
@@ -104,6 +117,15 @@ li{
   padding-right: 10px;
 }
 
+.valueText{
+  background-color: none;
+  color: #8c90a2;
+
+  position: absolute; 
+  bottom: 20px;
+  left: 20px; 
+}
+
 .settingbutton {
   border: none; 
   background: none; 
@@ -127,6 +149,8 @@ li{
   padding: 10px;
 
   border-radius: 15px; 
+
+  position: relative;
 }
 
 .tokenbutton{
@@ -160,7 +184,7 @@ li{
   padding: 10px 10px;
 
   width: 300px; 
-  height: 480px; 
+  height: 500px; 
   
   position: absolute;
   flex-direction: column; /*세로?로 정렬해주는 거*/
@@ -190,6 +214,9 @@ li{
   padding: 0 10px;
   margin-bottom: 6px;
 }
+.tokenmodalSearchInput:focus{
+  outline: none;
+}
 
 .tokenpanelClosebtn {
   border: none; 
@@ -204,13 +231,20 @@ li{
 .recentTokenHolder{
   background: none;
 
-  height: 100px;
+  height: 70px;
   width: 270px;
   
   padding: 0 10px;
 
   margin-top: 10px;
   margin-bottom: 6px;
+
+  display: flex;
+  float: left;
+
+  /*overflow-wrap: anywhere;*/
+  flex-wrap: wrap; /* 항목을 여러 줄로 표시 */
+  gap: 5px; /* 항목 간 간격 설정 */
 }
 .recentTokenHolder.none{
   height: 0px;
@@ -221,8 +255,8 @@ li{
   /*border: 2px solid #000;*/
   background: #e1e1ea;
 
-  height: 40px;
-  width: 60px;
+  height: 30px;
+  width: 45px;
   
   display: flex;
   align-items: center;
@@ -230,7 +264,9 @@ li{
 
   border-radius: 10px; 
 
-  font-size: 15px;
+  margin: 5px;
+
+  font-size: 12px;
 
   cursor: pointer;
 }
@@ -252,6 +288,7 @@ li{
   margin-top: 6px;
 
   position: relative;
+  top: 15px;
 }
 
 .tokenpanelFooterBtn{
@@ -288,17 +325,22 @@ li{
 
 .tokenmodalContainer{
   width:300px;
-  height:200px;
+  height:240px;
 
-  margin-top: 10px;
+  margin-top: 5px;
 
   overflow-y: auto; /*스크롤*/ 
+
+  position: relative;
+  top:20px; 
 }
 .tokenmodalContainer.none{
   width:300px;
   height:310px;
 
   margin-top: 10px;
+
+  top:0px;
 
   overflow-y: auto; /*스크롤*/ 
 }
