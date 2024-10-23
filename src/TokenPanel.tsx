@@ -3,10 +3,11 @@ import TokenModal from "./TokenModal";
 
 interface TokenPanelProps {
     isOpen: boolean;
-    onClose: () => void; // 패널을 닫는 함수 추가
+    onClose: () => void; // 패널 닫기   
+    onSelectToken:(name:string) => void;
 }
 
-const TokenPanel: React.FC<TokenPanelProps> = ({ isOpen, onClose }) => {
+const TokenPanel: React.FC<TokenPanelProps> = ({ isOpen, onClose, onSelectToken }) => {
 
     if (!isOpen) return null;
 
@@ -17,10 +18,10 @@ const TokenPanel: React.FC<TokenPanelProps> = ({ isOpen, onClose }) => {
                 <button className="tokenpanelClosebtn" onClick={onClose}>❌</button>
             </div>
 
-            <TokenModal/>
+            <TokenModal onSelectToken={onSelectToken}/>
 
-            <div>
-                <button className="tokenpanelFooter" onClick={()=>alert("준비 중입니다.")}>
+            <div className="tokenpanelFooter">
+                <button className="tokenpanelFooterBtn" onClick={()=>alert("준비 중입니다.")}>
                     토큰 목록 관리
                 </button>
             </div>

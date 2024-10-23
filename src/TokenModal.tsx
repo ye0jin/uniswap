@@ -5,7 +5,11 @@ interface Token {
     name: string;
 }
 
-function TokenModal() {
+interface TokenModalProps{
+    onSelectToken: (tokenName:string) => void;
+}
+
+function TokenModal({onSelectToken}:TokenModalProps) {
     const [tokens, setTokens] = useState<Token[]>([
         { id: 'ethereum', name: 'ETH' },
         { id: 'tether', name: 'USDT' },
@@ -34,15 +38,31 @@ function TokenModal() {
         token.name.toLowerCase().includes(userInput) // tokens에서 필터링
     );
 
+    const onClickToken = (token: Token) => {
+        onSelectToken(token.name);
+    }
+
     return (
         <div>
-            <input 
+            {/*검색 기능 구현*/}
+            <input className="tokenmodalSearchInput"
                 type="text" 
                 value={userInput} 
                 onChange={inputChange} 
+                placeholder="Search Token"
             />
 
-            <ul>{tokenList}</ul>
+            {/*목록 표시*/}
+            <ul className="tokenmodalContainer">
+                {searchedFromTokenList.map((token)=>(
+                <li 
+                    key={token.id} 
+                    className="tokenmodal"
+                    onClick={()=>onClickToken(token)}
+                >
+                        {token.name}
+                </li>
+            ))}</ul>
         </div>
     );
 }
